@@ -5,15 +5,15 @@ import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import org.junit.*;
 import pages.EcommerceMainPage;
-import pages.BasePage;
+
+import static steps.BaseSteps.openBrowser;
 
 public class EcommerceMainSteps {
 
     @Dado("que acesso o ecommerce")
     public void accessEcommerce() {
         String ecommerceUrl = "http://automationpractice.com";
-        BasePage.abrirNavegador(ecommerceUrl);
-        BasePage.waitOf(60);
+        openBrowser(ecommerceUrl);
     }
 
     @Quando("pesquiso o produto {string}")
@@ -25,7 +25,6 @@ public class EcommerceMainSteps {
     @Entao("a pesquisa deve retornar resultados")
     public void validarQuePesquisaRetornouResultados(){
         EcommerceMainPage ecommerceMainPage = new EcommerceMainPage();
-        BasePage.waitOf(60);
         Assert.assertTrue("O resultado da pesquisa está vazio.", ecommerceMainPage.isPesquisaRetornouResultados());
     }
 }

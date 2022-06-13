@@ -1,23 +1,15 @@
 package runner;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
-import utils.TestRule;
-import org.junit.*;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "./src/test/resources/features",
         tags = "@run",
         glue = {"steps"},
-        plugin = { "summary", "pretty", "json:target/jsonReports/cucumber-report.json",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+        plugin = { "pretty", "json:target/jsonReports/cucumber-report.json"},
         monochrome = true
 )
-public class RunTest {
-
-    @ClassRule
-    public static TestRule testRule = new TestRule();
-
-}
+public class RunTest {}

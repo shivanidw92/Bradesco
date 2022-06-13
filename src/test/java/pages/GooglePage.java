@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 public class GooglePage extends GoogleElements {
 
     public GooglePage(){
-        PageFactory.initElements(getDriver(), this);
+        PageFactory.initElements(driver, this);
     }
 
     public void pesquisarItem(String item){

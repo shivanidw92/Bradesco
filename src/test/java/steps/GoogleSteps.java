@@ -11,8 +11,7 @@ public class GoogleSteps {
         @Dado("que acesso Google")
         public void accessGoogle() {
                 String GoogleUrl = "https://www.google.com/";
-                BasePage.abrirNavegador(GoogleUrl);
-                BasePage.waitOf(60);
+                BasePage.openBrowser(GoogleUrl);
         }
 
         @Quando("pesquiso o item {string}")

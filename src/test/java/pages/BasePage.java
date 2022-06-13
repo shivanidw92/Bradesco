@@ -7,33 +7,29 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.TestRule;
+import steps.BaseSteps;
 
 import java.time.Duration;
 
 
-public class BasePage extends TestRule {
+public class BasePage extends BaseSteps {
 
     static Duration timeoutInSeconds = Duration.ofSeconds(30);
 
     public BasePage(){}
 
     protected void moveToElement(WebElement element){
-        Actions action = new Actions(getDriver());
+        Actions action = new Actions(driver);
         action.moveToElement(element).build().perform();
     }
 
     public static void waitVisibilityOf(WebElement element){
-        WebDriverWait wait = new WebDriverWait(getDriver(), timeoutInSeconds);
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static void waitOf(int secondsNumber){
-        new WebDriverWait(getDriver(), Duration.ofSeconds(secondsNumber));
-    }
-
     public static void TakeScreenshot(Scenario scenario){
-        final byte [] screenshot = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);
+        final byte [] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
         scenario.attach(screenshot, "image/png", "image");
         System.out.println("Capture Screenshot final ;D ...");
     }

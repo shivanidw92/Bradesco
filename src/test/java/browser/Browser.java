@@ -1,11 +1,9 @@
-package utils;
+package browser;
 
-import browser.*;
 import main.Variaveis;
 import org.openqa.selenium.WebDriver;
 
-public class BrowserUtils {
-
+public class Browser {
     public static WebDriver getWebDriver(){
         return getDriver(getBrowser());
     }
@@ -25,5 +23,4 @@ public class BrowserUtils {
     private static WebDriver getDriver(IBrowser browser){
         return browser.getDriver();
     }
-
 }
