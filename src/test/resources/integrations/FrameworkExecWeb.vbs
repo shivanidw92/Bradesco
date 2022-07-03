@@ -18,15 +18,33 @@ Dim apiTest
 Dim mainframeTest
 Dim gitExecution
 Dim objNodeList
-Dim userGit
-Dim passwordGit
-Dim branch
-Dim serverGit
 Dim ambiente
 Dim userBancoBradesco
 Dim passwordBancoBradesco
 Dim mobileTest
 Dim rotaGit
+Dim branch
+Dim serverGit
+Dim userGit
+Dim passwordGit
+Dim repositorioGit
+
+Function initEnvironments()
+'--------------------------------------------------------------------------------------------------------------
+    '***ALTERAR COM SEUS DADOS***
+    userGit = "I999999" 'Usuário padrão para o clone
+    passwordGit = "STQxODQ1NQ==" 'Senha do usuário padrão para o clone (Informe a senha criptograda em base 64)
+    repositorioGit = "framework-aut-web" 'Nome do repositório git que contém os testes a serem executados
+    '***ALTERAR COM SEUS DADOS***
+'--------------------------------------------------------------------------------------------------------------
+
+
+    'Rota do projeto no git, fica entre a URL e o nome do repositório.
+    'EX: https://bitbucket.bradescoseguros.com.br:8443/scm/aut/framework-aut-web.git = sc/aut
+    rotaGit = "scm/aut"
+    branch = "master" 'Branch padrão da execução
+    serverGit = "bitbucket.bradescoseguros.com.br:8443" 'Host padrão do servidor git
+End Function
 
 Public Function cmdExecute(CurrentTestSet, CurrentTSTest, CurrentRun, FolderCurrent)
 	On Error Resume Next
@@ -34,22 +52,10 @@ Public Function cmdExecute(CurrentTestSet, CurrentTSTest, CurrentRun, FolderCurr
 	gitExecution = true
 	mobileTest = false
 
-	readXmlConfig
-
 	If gitExecution = true Then
 		TDOutput.Print "Git execution true"
-		'Aqui deve ser informado a rota do projeto no git, fica entre a URL e o nome do repositório.
-        'EX: https://bitbucket.bradescoseguros.com.br:8443/scm/aut/framework-aut-web.git = sc/aut
-		rotaGit = "scm/aut"
-		'Usuário padrão para o clone
-		userGit = "I418455"
-		'Senha do usuário padrão: Gere um access tokens, não informe sua senha aqui
-		passwordGit = "STQxODQ1NQ=="
-		'Branch padrão da execução
-		branch = "master"
-		'Host padrão do servidor git
-		serverGit = "bitbucket.bradescoseguros.com.br:8443"
-		'Todos os valores padrões acima podem ser sobrescritos em tempo de execução criando o arquivo xml conforme ex abaixo no caminho C:\Automacao\config_automation.xml
+        initEnvironments
+        'Todos os valores das variáveis do git acima podem ser sobrescritos em tempo de execução criando o arquivo xml conforme ex abaixo no caminho C:\Automacao\config_automation.xml
 		'<?xml version="1.0"?>
 		'<config>
 		'	<git>
@@ -59,7 +65,8 @@ Public Function cmdExecute(CurrentTestSet, CurrentTSTest, CurrentRun, FolderCurr
 		'		<server>bitbucket.bradescoseguros.com.br:8443</server>
 		'	</git>
 		'</config>
-		gitClone "framework-aut-web"
+        readXmlConfig
+		gitClone repositorioGit
 	Else
 		TDOutput.Print "Git execution false"
 		'Caso a execução seja realizada localmente informe o caminho do projeto em sua maquina
