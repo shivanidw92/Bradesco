@@ -223,7 +223,7 @@ Function MvnTest(folder, CurrentTestSet, CurrentTSTest)
 	Else
 		strCmdLine = "%comspec% /c mvn -f """ & folder & """ test -Dvar.formatter=FatHtmlFormatter -Dvar.fmt_export=" & chr(34) & fileName & chr(34) & " -Dvar.userName="& userBancoBradesco &" -Dvar.password=" & passwordBancoBradesco & ""
 	End If
-    strCmdLine = strCmdLine & " -Dtest.environment=" & ambiente & " -Dcucumber.options=""" & resultTag & """"
+    strCmdLine = strCmdLine & " -Dtest.environment=" & ambiente & " -Dcucumber.filter.tags=""" & GetParameter(CurrentTSTest, "TEST_TAG") & """"
 	SetLog logStream, "Command mvn - " & Replace(Replace (strCmdLine, userBancoBradesco, "*******"), passwordBancoBradesco, "********")
 	TDOutput.Print "Executando o teste"
 	objShell.Run strCmdLine & " > " & folder & "\target\logs\maven_exec-" & fileName & ".txt", 0, True
