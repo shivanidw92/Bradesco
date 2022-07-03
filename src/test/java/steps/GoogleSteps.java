@@ -3,15 +3,16 @@ package steps;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
-import pages.BasePage;
 import pages.GooglePage;
+
+import static steps.BaseSteps.openBrowser;
 
 public class GoogleSteps {
 
         @Dado("que acesso Google")
         public void accessGoogle() {
                 String GoogleUrl = "https://www.google.com/";
-                BasePage.openBrowser(GoogleUrl);
+                openBrowser(GoogleUrl);
         }
 
         @Quando("pesquiso o item {string}")
