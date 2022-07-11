@@ -11,13 +11,19 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <cucumber.version>7.2.3</cucumber.version>
+        <cucumber.version>4.3.0</cucumber.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>br.com.bradesco</groupId>
             <artifactId>framework-aut-variaveis</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>br.com.bradesco</groupId>
+            <artifactId>framework-aut-relatorios</artifactId>
             <version>1.0</version>
         </dependency>
 
@@ -46,6 +52,20 @@
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.7.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.microfocus.adm.almoctane.bdd</groupId>
+            <artifactId>octane-cucumber-jvm</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
     </dependencies>
 
 </project>
