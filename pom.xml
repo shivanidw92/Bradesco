@@ -21,11 +21,11 @@
             <version>1.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>br.com.bradesco</groupId>
-            <artifactId>framework-aut-relatorios</artifactId>
-            <version>1.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>br.com.bradesco</groupId>-->
+<!--            <artifactId>framework-aut-relatorios</artifactId>-->
+<!--            <version>1.0</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>io.cucumber</groupId>
