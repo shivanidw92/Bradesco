@@ -12,5 +12,6 @@ public class EcommerceCartElements extends BasePage {
         @FindBy(xpath = "/html/body/div/div[2]/div/div[3]/div/p")
         protected WebElement alertaCarrinhoVazio;
 
+
     }
 
