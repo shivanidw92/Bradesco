@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class GoogleChrome implements IBrowser {
     @Override
     public WebDriver getDriver() {
-        String driverPath = getDriverPathByOS("chromedriver");
+        String driverPath = getDriverPathByOS("chromedriver13");
         System.setProperty("webdriver.chrome.driver", driverPath);
 
         ChromeOptions chromeOpts = new ChromeOptions();
