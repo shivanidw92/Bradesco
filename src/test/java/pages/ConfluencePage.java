@@ -16,7 +16,9 @@ public class ConfluencePage extends ConfluenceElements {
     }
 
     public void verificoPagina(){
-        String pagina = Variaveis.get().asString("pagina");
+        System.out.println(System.getenv("bamboo_pagina"));
+        System.out.println(System.getProperty("bamboo_pagina"));
+        String pagina = Variaveis.get().asString("bamboo_pagina");
         System.out.println("Página " + pagina);
     }
 }
