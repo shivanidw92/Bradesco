@@ -18,6 +18,10 @@ public class ConfluencePage extends ConfluenceElements {
     public void verificoPagina(){
         System.out.println(System.getenv("bamboo_pagina"));
         System.out.println(System.getProperty("bamboo_pagina"));
+        System.out.println("env: "+Variaveis.get().AllFromEnvironmentVariables());
+        System.out.println("local: "+Variaveis.get().AllFromLocalProperties());
+        System.out.println("all: "+Variaveis.get().All());
+        System.out.println(System.getProperty("bamboo_pagina"));
         String pagina = Variaveis.get().asString("bamboo_pagina");
         System.out.println("Página " + pagina);
     }
