@@ -8,13 +8,13 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "./src/test/resources/features",
         glue = {"steps"},
-//        tags = "@TID14023REV0.3.0",
+        tags = "@TID14023REV0.3.0",
 //        dryRun = true,
         monochrome = true,
         plugin = {
-//            "pretty",
+            "pretty",
             "junit:results.xml",
-//            "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+            "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
             "com.hpe.alm.octane.OctaneGherkinFormatter:gherkin-results/OctaneGherkinResults.xml"
         }
 )
