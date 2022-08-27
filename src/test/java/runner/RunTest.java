@@ -14,7 +14,6 @@ import org.junit.runner.RunWith;
         plugin = {
             "pretty",
             "junit:results.xml",
-            "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
             "com.hpe.alm.octane.OctaneGherkinFormatter:gherkin-results/OctaneGherkinResults.xml"
         }
 )
