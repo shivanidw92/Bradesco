@@ -1,8 +1,8 @@
 package steps;
 
-import io.cucumber.java.pt.Dado;
-import io.cucumber.java.pt.Entao;
-import io.cucumber.java.pt.Quando;
+import cucumber.api.java.es.Dado;
+import cucumber.api.java.it.Quando;
+import cucumber.api.java.pt.Entao;
 import org.junit.*;
 import pages.EcommerceMainPage;
 

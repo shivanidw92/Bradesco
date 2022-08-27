@@ -1,8 +1,5 @@
 package pages;
 
-import io.cucumber.java.Scenario;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,12 +23,6 @@ public class BasePage extends BaseSteps {
     public static void waitVisibilityOf(WebElement element){
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.until(ExpectedConditions.visibilityOf(element));
-    }
-
-    public static void TakeScreenshot(Scenario scenario){
-        final byte [] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-        scenario.attach(screenshot, "image/png", "image");
-        System.out.println("Capture Screenshot final ;D ...");
     }
 
 }
