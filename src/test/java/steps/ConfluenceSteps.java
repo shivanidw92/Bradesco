@@ -17,12 +17,12 @@ public class ConfluenceSteps {
 
     @Quando("pesquiso pela pagina")
     public void pesquisoPagina() {
-        String pagina = Variaveis.get().asString("bamboo_pagina");
+        String pagina = Variaveis.get().asString("pagina");
         ConfluencePage confluencePage = new ConfluencePage();
         confluencePage.pesquisarPagina(pagina);
     }
 
-    @Entao("verifico a pagina")
+    @Entao("deve aparecer a pagina pesquisada")
     public void verificoPagina() {
         ConfluencePage confluencePage = new ConfluencePage();
         confluencePage.verificoPagina();
