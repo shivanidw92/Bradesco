@@ -2,10 +2,9 @@ package steps;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
-import cucumber.api.java.AfterStep;
 import cucumber.api.java.Before;
 import org.openqa.selenium.WebDriver;
-import report.Screenshot;
+import report.Report;
 import utils.GlobalDriver;
 
 public class BaseSteps {
@@ -16,19 +15,13 @@ public class BaseSteps {
     public static void setup(Scenario scenario){
         GlobalDriver.set();
         driver = GlobalDriver.get();
+        Report.init(driver);
     }
 
     @After
     public static void finish(Scenario scenario) {
-        scenario.embed(Screenshot.getByteScreenshot(driver), "image/png");
-//        scenario.attach(Screenshot.getByteScreenshot(driver), "image/png", scenario.getName());
+        Report.generatePDF();
         GlobalDriver.close();
-    }
-
-    @AfterStep
-    public static void afterStep(Scenario scenario) {
-        scenario.embed(Screenshot.getByteScreenshot(driver), "image/png");
-//        scenario.attach(Screenshot.getByteScreenshot(driver), "image/png", "");
     }
 
     public static void openBrowser(String url){

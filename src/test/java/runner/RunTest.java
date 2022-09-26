@@ -14,7 +14,8 @@ import org.junit.runner.RunWith;
 //            "pretty",
 //            "junit:results.xml",
 //            "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-            "com.hpe.alm.octane.OctaneGherkinFormatter:gherkin-results/OctaneGherkinResults.xml"
+            "com.hpe.alm.octane.OctaneGherkinFormatter:gherkin-results/OctaneGherkinResults.xml",
+                "relatorio.StepDetailsPlugin"
         }
 )
 public class RunTest {}
