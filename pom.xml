@@ -18,7 +18,7 @@
         <dependency>
             <groupId>br.com.bradesco</groupId>
             <artifactId>framework-aut-variaveis</artifactId>
-            <version>1.0</version>
+            <version>1.1</version>
         </dependency>
 
         <dependency>
@@ -58,12 +58,6 @@
             <artifactId>octane-cucumber-jvm</artifactId>
             <version>1.0.0</version>
         </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>info.cukes</groupId>-->
-<!--            <artifactId>gherkin</artifactId>-->
-<!--            <version>2.12.2</version>-->
-<!--        </dependency>-->
 
     </dependencies>
 

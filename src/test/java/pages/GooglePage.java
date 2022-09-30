@@ -1,6 +1,7 @@
 package pages;
 
 import elements.GoogleElements;
+import main.Variaveis;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.PageFactory;
 

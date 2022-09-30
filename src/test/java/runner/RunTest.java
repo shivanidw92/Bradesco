@@ -8,14 +8,13 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "./src/test/resources/features",
         glue = {"steps"},
-        tags = "@run2",
+        tags = "@runP",
         monochrome = true,
         plugin = {
-//            "pretty",
-//            "junit:results.xml",
-//            "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+            "pretty",
+            "junit:results.xml",
             "com.hpe.alm.octane.OctaneGherkinFormatter:gherkin-results/OctaneGherkinResults.xml",
-                "relatorio.StepDetailsPlugin"
+            "plugin.StepDetailsPlugin"
         }
 )
 public class RunTest {}

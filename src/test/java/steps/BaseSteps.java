@@ -3,6 +3,7 @@ package steps;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import model.Platform;
 import org.openqa.selenium.WebDriver;
 import report.Report;
 import utils.GlobalDriver;
@@ -15,12 +16,12 @@ public class BaseSteps {
     public static void setup(Scenario scenario){
         GlobalDriver.set();
         driver = GlobalDriver.get();
-        Report.init(driver);
+        Report.init(driver, Platform.WEB);
     }
 
     @After
     public static void finish(Scenario scenario) {
-        Report.generatePDF();
+        Report.generatePDF(scenario);
         GlobalDriver.close();
     }
 
