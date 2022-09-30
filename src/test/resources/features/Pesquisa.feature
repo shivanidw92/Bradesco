@@ -11,7 +11,7 @@ Funcionalidade: Pesquisa
     Quando pesquiso o produto "t-shirt"
     Entao a pesquisa deve retornar resultados
 
-  @run
+  @runP
   Esquema do Cenario: Pesquisar produtos
     Quando pesquiso o produto <nome_produto>
     Entao a pesquisa deve retornar resultados

@@ -21,11 +21,11 @@
             <version>1.1</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>br.com.bradesco</groupId>-->
-<!--            <artifactId>framework-aut-relatorios</artifactId>-->
-<!--            <version>1.0</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>br.com.bradesco</groupId>
+            <artifactId>framework-aut-relatorios</artifactId>
+            <version>1.0</version>
+        </dependency>
 
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -50,13 +50,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>tech.grasshopper</groupId>
-            <artifactId>extentreports-cucumber7-adapter</artifactId>
-            <version>1.7.0</version>
             <scope>test</scope>
         </dependency>
 
