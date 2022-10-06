@@ -1,3 +1,5 @@
 target
 .idea
 results.xml
+/gherkin-results/
+/src/test/resources/test-results/
